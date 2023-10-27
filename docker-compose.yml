@@ -4,29 +4,31 @@ services:
   mysql-fetch:
     container_name: mysql-fetch
     image: mysql
+    command: --init-file /tmp/data/data.sql
     environment:
-      MYSQL_DB: fetch-service
-      MYSQL_USER: root
-      MYSQL_PASSWORD: mysql
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
     volumes:
+      - ./fetch-service/src/main/resources:/tmp/data
       - ./mysql-fetch:/var/lib/mysql
     expose:
       - "3306"
     ports:
-      - "3307:3306"
+      - "3306:3306"
     restart: unless-stopped
 
   mysql-inventory:
     container_name: mysql-inventory
     image: mysql
+    command: --init-file /tmp/data/data.sql
     environment:
-      MYSQL_DB: inventory-service
-      MYSQL_USER: root
-      MYSQL_PASSWORD: mysql
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
     volumes:
+      - ./inventory-service/src/main/resources:/tmp/data
       - ./mysql-inventory:/var/lib/mysql
     ports:
-      - "3308:3306"
+      - "3307:3306"
     restart: unless-stopped
     
   mongo:
