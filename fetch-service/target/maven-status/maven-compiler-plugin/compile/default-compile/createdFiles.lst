@@ -1,8 +1,12 @@
 com\programming\fetchservice\dto\FetchRequest.class
-com\programming\fetchservice\service\FetchService.class
+com\programming\fetchservice\dto\InventoryResponse.class
 com\programming\fetchservice\repository\FetchRepository.class
 com\programming\fetchservice\FetchServiceApplication.class
 com\programming\fetchservice\dto\FetchIdeasDto.class
+com\programming\fetchservice\dto\InventoryResponse$InventoryResponseBuilder.class
+com\programming\fetchservice\controller\FetchController.class
+com\programming\fetchservice\service\FetchService.class
+com\programming\fetchservice\event\FetchSuccessfulEvent.class
 com\programming\fetchservice\model\FetchIdeas.class
 com\programming\fetchservice\model\Fetch.class
-com\programming\fetchservice\controller\FetchController.class
+com\programming\fetchservice\config\WebClientConfig.class

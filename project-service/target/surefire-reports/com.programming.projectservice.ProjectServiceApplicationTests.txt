@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.programming.projectservice.ProjectServiceApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.59 s - in com.programming.projectservice.ProjectServiceApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.781 s - in com.programming.projectservice.ProjectServiceApplicationTests
