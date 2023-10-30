@@ -53,7 +53,7 @@ antlr/
 aopalliance/
 asm/
 ch/
-com/
+/com/
 commons-*/
 io/
 jakarta/
@@ -66,5 +66,9 @@ xmlpull/
 mysql-inventory/
 mongo-data/
 mysql-fetch/
+project-service/target/
+fetch-service/target/
 
+*jib-cache
+*.jar.*
 # End of https://www.toptal.com/developers/gitignore/api/maven
