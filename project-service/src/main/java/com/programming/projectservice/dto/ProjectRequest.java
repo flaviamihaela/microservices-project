@@ -8,7 +8,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -17,5 +16,4 @@ import java.math.BigDecimal;
 public class ProjectRequest {
     private String name;
     private String description;
-    private BigDecimal price;
 }

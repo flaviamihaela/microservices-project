@@ -32,7 +32,6 @@ public class ProjectService {
         Project project = Project.builder()
                 .name(projectRequest.getName())
                 .description(projectRequest.getDescription())
-                .price(projectRequest.getPrice())
                 .build();
 
         // Save Project entity to db using ProjectRepository
@@ -56,7 +55,6 @@ public class ProjectService {
                 .id(project.getId())
                 .name(project.getName())
                 .description(project.getDescription())
-                .price(project.getPrice())
                 .build();
     }
 }

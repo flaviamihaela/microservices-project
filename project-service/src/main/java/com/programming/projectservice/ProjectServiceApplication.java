@@ -1,13 +1,7 @@
 // Define package for this class
 package com.programming.projectservice;
 
-
-import com.programming.projectservice.model.Project;
-import com.programming.projectservice.repository.ProjectRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.CommandLineRunner;
-
-import java.math.BigDecimal;
 
 // Import necessary classes from the Spring Framework and Spring Boot
 import org.springframework.boot.SpringApplication;
