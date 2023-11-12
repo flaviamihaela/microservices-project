@@ -6,8 +6,9 @@ services:
     image: mysql
     command: --init-file /tmp/data/data.sql
     environment:
-      MYSQL_USER: root
-      MYSQL_PASSWORD: mysql
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: mysql
     volumes:
       - ./fetch-service/src/main/resources:/tmp/data
       - ./mysql-fetch:/var/lib/mysql
@@ -22,8 +23,9 @@ services:
     image: mysql
     command: --init-file /tmp/data/data.sql
     environment:
-      MYSQL_USER: root
-      MYSQL_PASSWORD: mysql
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: mysql
     volumes:
       - ./inventory-service/src/main/resources:/tmp/data
       - ./mysql-inventory:/var/lib/mysql
