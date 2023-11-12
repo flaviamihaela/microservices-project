@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+// import java.math.BigDecimal;
 
 @Entity
 @Table(name = "t_fetch_ideas")
@@ -18,7 +18,7 @@ public class FetchIdeas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String skuCode;
-    private BigDecimal price;
+    private String categoryCode;
+    // private BigDecimal price;
     private Integer quantity;
 }

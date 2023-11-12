@@ -44,8 +44,8 @@ public class FetchService {
 
         fetch.setFetchIdeasList(fetchIdeas);
 
-        List<String> skuCodes =  fetch.getFetchIdeasList().stream()
-                                .map(FetchIdeas::getSkuCode)
+        List<String> categoryCodes =  fetch.getFetchIdeasList().stream()
+                                .map(FetchIdeas::getCategoryCode)
                                 .toList();
 
         Span inventoryServiceLookup = tracer.nextSpan().name("InventoryServiceLookup");
@@ -54,7 +54,7 @@ public class FetchService {
 
             InventoryResponse[] inventoryResponseArray = webClientBuilder.build().get()
                 .uri("http://inventory-service/api/inventory", 
-                    uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
+                    uriBuilder -> uriBuilder.queryParam("categoryCode", categoryCodes).build())
                 .retrieve()
                 .bodyToMono(InventoryResponse[].class)
                 .block();
@@ -77,9 +77,9 @@ public class FetchService {
 
     private FetchIdeas mapToDto(FetchIdeasDto fetchIdeasDto) {
         FetchIdeas fetchIdeas = new FetchIdeas();
-        fetchIdeas.setPrice(fetchIdeasDto.getPrice());
+        // fetchIdeas.setPrice(fetchIdeasDto.getPrice());
         fetchIdeas.setQuantity(fetchIdeasDto.getQuantity());
-        fetchIdeas.setSkuCode(fetchIdeasDto.getSkuCode());
+        fetchIdeas.setCategoryCode(fetchIdeasDto.getCategoryCode());
         return fetchIdeas;
     }
 }
