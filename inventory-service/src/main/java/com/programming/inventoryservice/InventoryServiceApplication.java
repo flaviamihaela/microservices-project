@@ -20,15 +20,25 @@ public class InventoryServiceApplication {
     public CommandLineRunner loadData(InventoryRepository inventoryRepository) {
         return args -> {
             Inventory inventory = new Inventory();
-            inventory.setCategoryCode("iphone_13");
-            inventory.setQuantity(100);
+            inventory.setCategoryCode("Librarires&Tools");
+            inventory.setQuantity(1);
 
             Inventory inventory1 = new Inventory();
-            inventory1.setCategoryCode("iphone_13_red");
+            inventory1.setCategoryCode("Web Apps");
             inventory1.setQuantity(0);
+
+            Inventory inventory2 = new Inventory();
+            inventory2.setCategoryCode("Mobile Apps");
+            inventory2.setQuantity(1);
+
+            Inventory inventory3 = new Inventory();
+            inventory3.setCategoryCode("Internet of Things");
+            inventory3.setQuantity(1);
 
             inventoryRepository.save(inventory);
             inventoryRepository.save(inventory1);
+            inventoryRepository.save(inventory2);
+            inventoryRepository.save(inventory3);
         };
     }
 }

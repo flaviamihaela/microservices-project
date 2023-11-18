@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController // defines class as REST Controller
-@RequestMapping("/api/project") // define base URL path for HTTP requests 
+@RequestMapping("/api/project") // defines base URL path for HTTP requests 
 @RequiredArgsConstructor
 public class ProjectController {
 

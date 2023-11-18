@@ -24,9 +24,9 @@ public class InventoryService {
         return inventoryRepository.findByCategoryCodeIn(categoryCode).stream()
                 .map(inventory ->
                     InventoryResponse.builder()
-                    .categoryCode(inventory.getCategoryCode())
-                    .isInStock(inventory.getQuantity() > 0)
-                    .build()
+                        .categoryCode(inventory.getCategoryCode())
+                        .isInStock(inventory.getQuantity() > 0)
+                        .build()
                 ).toList();
     }
 }

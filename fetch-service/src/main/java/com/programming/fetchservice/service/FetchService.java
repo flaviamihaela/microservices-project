@@ -13,6 +13,7 @@ import com.programming.fetchservice.dto.InventoryResponse;
 import com.programming.fetchservice.event.FetchSuccessfulEvent;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 @Transactional
+@Slf4j
 public class FetchService {
 
     private final FetchRepository fetchRepository;
@@ -66,6 +68,7 @@ public class FetchService {
                 kafkaTemplate.send("notificationTopic", new FetchSuccessfulEvent(fetch.getFetchNumber()));
                 return "Out of fresh ideas?! Check your email!";
             } else {
+                log.error("There are no new ideas. You haven't brainstormed in a while, huh?");
                 throw new IllegalArgumentException("There are no new ideas. You haven't brainstormed in a while, huh?");
             }
 
@@ -77,7 +80,6 @@ public class FetchService {
 
     private FetchIdeas mapToDto(FetchIdeasDto fetchIdeasDto) {
         FetchIdeas fetchIdeas = new FetchIdeas();
-        // fetchIdeas.setPrice(fetchIdeasDto.getPrice());
         fetchIdeas.setQuantity(fetchIdeasDto.getQuantity());
         fetchIdeas.setCategoryCode(fetchIdeasDto.getCategoryCode());
         return fetchIdeas;
