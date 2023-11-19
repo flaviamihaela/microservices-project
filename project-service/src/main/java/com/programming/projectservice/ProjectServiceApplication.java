@@ -1,36 +1,42 @@
-// Define package for this class
+// Define package for class
 package com.programming.projectservice;
 
+// Import classes and annotations
 import com.programming.projectservice.model.Project;
 import com.programming.projectservice.repository.ProjectRepository;
 
-// Import necessary classes from the Spring Framework and Spring Boot
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-// Annotation - marks class as Spring Boot application, excludes specific auto-configuration classes
+// Defines class as main entry point for Spring Boot Application
 @SpringBootApplication
-// Enable service to act as a client in a Eureka service discovery system
+// Enables service to register with a Eureka service discovery system
 @EnableEurekaClient
+// Automatically generates a constructor with required arguments
 @RequiredArgsConstructor
 public class ProjectServiceApplication implements CommandLineRunner {
 
+    // Dependency Injection
     private final ProjectRepository projectRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(ProjectServiceApplication.class, args);
     }
 
+     // Overrides run method from CommandLineRunner interface
     @Override
     public void run(String... args) {
+        // Check if no projects in repository
         if (projectRepository.count() < 1) {
             Project project = new Project();
-            project.setName("iPhone 13");
-            project.setDescription("iPhone 13");
+            project.setName("WA");
+            project.setDescription("Web Apps");
 
+            // Saves new project object to repository
             projectRepository.save(project);
         }
     }

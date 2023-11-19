@@ -1,23 +1,24 @@
-// Define package for this class
+// Define package for class
 package com.programming.projectservice.model;
 
-// Importing Lombok annotations
-// to generate boilerplate getters, setters, constructors, etc.
+// Import classes and annotations
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// Importing Spring Data annotations
-// for MongoDB mapping and identification of primary key
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
+// Marks class as MongoDB document stored in 'project' collection
 @Document(value = "project")
+// Generates constructor with arguments for all fields
 @AllArgsConstructor
+// Generates constructor with no arguments
 @NoArgsConstructor
-@Builder // use Builder pattern for object creation
+// Enables Builder pattern for object creation
+@Builder
+// Generates getters, setters, toString, equals, and hashCode methods
 @Data
 public class Project {
 
