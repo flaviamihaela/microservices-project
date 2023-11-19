@@ -12,10 +12,8 @@ services:
     volumes:
       - ./fetch-service/src/main/resources:/tmp/data
       - ./mysql-fetch:/var/lib/mysql
-    expose:
-      - "3306"
     ports:
-      - "3306:3306"
+      - "3308:3306"
     restart: unless-stopped
 
   mysql-inventory:
