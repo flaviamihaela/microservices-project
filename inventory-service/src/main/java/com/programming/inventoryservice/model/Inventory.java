@@ -23,4 +23,9 @@ public class Inventory {
     private Long id;
     private String categoryCode;
     private Integer quantity;
+    private String techStack;
+    private String dB;
+    private String backendStructure;
+    private String frontendStructure;
+    private String mainComponents;
 }

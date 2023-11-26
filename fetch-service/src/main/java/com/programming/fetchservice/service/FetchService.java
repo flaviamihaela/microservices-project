@@ -86,6 +86,9 @@ public class FetchService {
                 throw new IllegalArgumentException("There are no new ideas. You haven't brainstormed in a while, huh?");
             }
 
+
+            
+
         } finally {
             // Adds a tag to the tracing span
             inventoryServiceLookup.tag("call", "inventory-service");
@@ -100,4 +103,6 @@ public class FetchService {
         fetchIdeas.setCategoryCode(fetchIdeasDto.getCategoryCode());
         return fetchIdeas;
     }
+
+    
 }

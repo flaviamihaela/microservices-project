@@ -25,22 +25,43 @@ public class InventoryServiceApplication {
     @Bean
     public CommandLineRunner loadData(InventoryRepository inventoryRepository) {
         return args -> {
-            // Creates and setting up Inventory objects with specific details
+            // Creates and sets up Inventory objects with specific details
             Inventory inventory = new Inventory();
-            inventory.setCategoryCode("Librarires&Tools");
+            inventory.setCategoryCode("L&T");
             inventory.setQuantity(1);
+            inventory.setTechStack("L&T");
+            inventory.setDB("L&T");
+            inventory.setBackendStructure("L&T");
+            inventory.setFrontendStructure("L&T");
+            inventory.setMainComponents("L&T");
+
 
             Inventory inventory1 = new Inventory();
-            inventory1.setCategoryCode("Web Apps");
+            inventory1.setCategoryCode("WA");
             inventory1.setQuantity(0);
+            inventory1.setTechStack("WA");
+            inventory1.setDB("WA");
+            inventory1.setBackendStructure("WA");
+            inventory1.setFrontendStructure("WA");
+            inventory1.setMainComponents("WA");
 
             Inventory inventory2 = new Inventory();
-            inventory2.setCategoryCode("Mobile Apps");
+            inventory2.setCategoryCode("MA");
             inventory2.setQuantity(1);
+            inventory2.setTechStack("MA");
+            inventory2.setDB("MA");
+            inventory2.setBackendStructure("MA");
+            inventory2.setFrontendStructure("MA");
+            inventory2.setMainComponents("MA");
 
             Inventory inventory3 = new Inventory();
-            inventory3.setCategoryCode("Internet of Things");
+            inventory3.setCategoryCode("IoT");
             inventory3.setQuantity(1);
+            inventory3.setTechStack("IoT");
+            inventory3.setDB("IoT");
+            inventory3.setBackendStructure("IoT");
+            inventory3.setFrontendStructure("IoT");
+            inventory3.setMainComponents("IoT");
 
             // Saves created Inventory objects into the repository
             inventoryRepository.save(inventory);
