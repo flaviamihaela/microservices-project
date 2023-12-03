@@ -35,7 +35,6 @@ public class InventoryService {
                     InventoryResponse.builder()
                         .categoryCode(inventory.getCategoryCode())
                         .techStack(inventory.getTechStack())
-                        .isInStock(inventory.getQuantity() > 0)
                         .dB(inventory.getDB())
                         .backendStructure(inventory.getBackendStructure())
                         .frontendStructure(inventory.getFrontendStructure())

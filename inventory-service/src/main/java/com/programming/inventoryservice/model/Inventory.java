@@ -22,7 +22,6 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String categoryCode;
-    private Integer quantity;
     private String techStack;
     private String dB;
     private String backendStructure;

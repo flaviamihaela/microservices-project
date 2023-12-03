@@ -15,11 +15,6 @@ import java.util.concurrent.CompletableFuture;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import com.programming.fetchservice.dto.ChatRequest;
-import com.programming.fetchservice.dto.ChatResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.client.RestTemplate;
-
 // Marks this class as controller where methods return domain object
 @RestController
 // Base URL path for all request mappings in this controller
@@ -31,9 +26,6 @@ public class FetchController {
 
     // Dependency injection
     private final FetchService fetchService;
-
-    @Autowired
-    private RestTemplate template;
 
     // Marks method to handle POST request
     @PostMapping
@@ -59,17 +51,9 @@ public class FetchController {
     @GetMapping
     //Marks method with the HTTP status code
     @ResponseStatus(HttpStatus.OK)
-    public String chat(@RequestParam("prompt") String prompt) {
-        ChatRequest request = new ChatRequest("gpt-3.5-turbo", prompt);
-        try {
-            ChatResponse response = template.postForObject(
-                    "https://api.openai.com/v1/chat/completions", request, ChatResponse.class);
-                    if (response != null && response.getChoices() != null && !response.getChoices().isEmpty()) {
-                        return response.getChoices().get(0).getMessage().getContent();
-                    } else {
-                        return "Received an empty response";
-                    }        } catch (Exception e) {
-            return e.getMessage();
-        }
+    public CompletableFuture<String> chat(@RequestParam("prompt") String prompt) {
+        // Method uses CompletableFuture to asynchronously handle request using FetchService
+        return CompletableFuture.supplyAsync(()->fetchService.chat(prompt));
     }
+
 }
