@@ -22,5 +22,5 @@ public class FetchIdeas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String categoryCode;
-
+    private Integer quantity;
 }

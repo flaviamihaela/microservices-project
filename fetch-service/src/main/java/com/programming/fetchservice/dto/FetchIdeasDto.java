@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 public class FetchIdeasDto {
     private Long id;
     private String categoryCode;
+    private Integer quantity;
 }
