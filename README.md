@@ -15,3 +15,5 @@ Inventory Service= can check if project from a particular category is available 
 
 Notification Service= stateless service with no database that sends notifications to users
 
+See OneNote for more info: 
+[Microservices- guide.pdf](https://github.com/flaviamihaela/microservices-project/files/14077496/Microservices-.guide.pdf)
