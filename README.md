@@ -1,8 +1,8 @@
 # microservices-project
 
-Main idea overview:
+## Main idea overview:
 
-	- Develop a series of services that enable a fellow programmer to store spontaneous coding ideas, assign them a category and then retrieve one at random from a particular category when kickstarting a new personal project
+Develop a series of services that enable a fellow programmer to store spontaneous coding ideas, assign them a category and then retrieve one at random from a particular category when kickstarting a new personal project
 
 
 Main Services:
