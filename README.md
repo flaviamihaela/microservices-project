@@ -5,7 +5,7 @@
 Develop a series of services that enable a fellow programmer to store spontaneous coding ideas, assign them a category and then retrieve one at random from a particular category when kickstarting a new personal project
 
 
-Main Services:
+## Main Services:
 
 Project Service= to create and view project categories (acts like a project catalogue)
 
