@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 // Defines class as REST Controller
 @RestController
 // Base URL path for all request mappings in this controller
@@ -28,7 +30,7 @@ public class ProjectController {
     @PostMapping
     // Sets the HTTP status code to 'CREATED' (201) when this method completes successfully
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProject(@RequestBody ProjectRequest projectRequest) {
+    public void createProject(@Valid @RequestBody ProjectRequest projectRequest) {
         // Delegates to the projectService to create a new project using the provided request data
         projectService.createProject(projectRequest);
     }

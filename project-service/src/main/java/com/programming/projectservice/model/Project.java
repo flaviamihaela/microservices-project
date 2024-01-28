@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 // Marks class as MongoDB document stored in 'project' collection
@@ -24,6 +25,7 @@ public class Project {
 
     @Id // marks the below field as the primary key in MongoDB
     private String id;
+    @Indexed(unique = true) 
     private String name;
     private String description;
 }

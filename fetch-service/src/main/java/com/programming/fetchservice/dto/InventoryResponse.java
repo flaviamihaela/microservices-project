@@ -16,8 +16,7 @@ import lombok.NoArgsConstructor;
 
 public class InventoryResponse {
     private String categoryCode;
-    private boolean isInStock;
-    private String techStack;
+    private String ideaDescription;
     private String dB;
     private String backendStructure;
     private String frontendStructure;

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.Builder;
 
 import javax.persistence.*;
 
@@ -12,6 +13,8 @@ import javax.persistence.*;
 @Entity
 // Specifies table in database with which entity is mapped
 @Table(name = "t_inventory")
+// Enables Builder pattern for object creation
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,8 +25,7 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String categoryCode;
-    private Integer quantity;
-    private String techStack;
+    private String ideaDescription;
     private String dB;
     private String backendStructure;
     private String frontendStructure;

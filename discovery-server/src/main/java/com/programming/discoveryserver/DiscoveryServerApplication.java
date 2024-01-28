@@ -1,5 +1,6 @@
 // Declare package for class
 package com.programming.discoveryserver;
+
 // Import classes and annotations
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

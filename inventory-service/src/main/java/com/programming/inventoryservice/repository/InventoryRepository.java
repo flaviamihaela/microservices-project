@@ -10,4 +10,5 @@ import java.util.List;
 // Interface extends JpaRepository to provide CRUD operations
 public interface InventoryRepository extends JpaRepository<Inventory, Long> {
     List<Inventory> findByCategoryCodeIn(List<String> categoryCode);
+    Inventory findFirstByCategoryCode(String categoryCode);
 }

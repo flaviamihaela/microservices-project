@@ -28,46 +28,51 @@ public class InventoryServiceApplication {
             // Creates and sets up Inventory objects with specific details
             Inventory inventory = new Inventory();
             inventory.setCategoryCode("L&T");
-            inventory.setQuantity(1);
-            inventory.setTechStack("L&T");
-            inventory.setDB("L&T");
-            inventory.setBackendStructure("L&T");
-            inventory.setFrontendStructure("L&T");
-            inventory.setMainComponents("L&T");
+            inventory.setIdeaDescription("Code Wizard Toolkit");
+            inventory.setDB("MongoDB");
+            inventory.setBackendStructure("Spring Boot with Maven");
+            inventory.setFrontendStructure("React");
+            inventory.setMainComponents("RESTful API server, build system for dependency management and project lifecycle tasks, single-page application with components for user authentication, library and tool listings, detailed views, and documentation access");
 
 
             Inventory inventory1 = new Inventory();
             inventory1.setCategoryCode("WA");
-            inventory1.setQuantity(0);
-            inventory1.setTechStack("WA");
-            inventory1.setDB("WA");
-            inventory1.setBackendStructure("WA");
-            inventory1.setFrontendStructure("WA");
-            inventory1.setMainComponents("WA");
+            inventory1.setIdeaDescription("Chef's Companion Recipe Organizer");
+            inventory1.setDB("MongoDB");
+            inventory1.setBackendStructure("Express - Node js");
+            inventory1.setFrontendStructure("React");
+            inventory1.setMainComponents("Server handling API requests, middleware for routing and authentication, server-side logic, and a frontend with components for navigation, data presentation, and interactive user interfaces");
 
             Inventory inventory2 = new Inventory();
             inventory2.setCategoryCode("MA");
-            inventory2.setQuantity(1);
-            inventory2.setTechStack("MA");
-            inventory2.setDB("MA");
-            inventory2.setBackendStructure("MA");
-            inventory2.setFrontendStructure("MA");
-            inventory2.setMainComponents("MA");
+            inventory2.setIdeaDescription("Green Thumb Gardening Guide");
+            inventory2.setDB("PostgreSQL");
+            inventory2.setBackendStructure("Django");
+            inventory2.setFrontendStructure("React");
+            inventory2.setMainComponents("REST framework for creating API endpoints, cross-platform user interface, data management, along with authentication, routing, and state management functionalities.");
 
             Inventory inventory3 = new Inventory();
             inventory3.setCategoryCode("IoT");
-            inventory3.setQuantity(1);
-            inventory3.setTechStack("IoT");
-            inventory3.setDB("IoT");
-            inventory3.setBackendStructure("IoT");
-            inventory3.setFrontendStructure("IoT");
-            inventory3.setMainComponents("IoT");
+            inventory3.setIdeaDescription("Smart Home Symphony' Controller");
+            inventory3.setDB("MongoDB");
+            inventory3.setBackendStructure("Flask");
+            inventory3.setFrontendStructure("Vue.js");
+            inventory3.setMainComponents("Flask-SocketIO for real-time communication, a RESTful API for device interaction, a time-series or NoSQL database for data storage, reactive frontend interface capable of displaying real-time device data and controls.");
+
+            Inventory inventory4 = new Inventory();
+            inventory4.setCategoryCode("WA");
+            inventory4.setIdeaDescription("Chef's Companion Recipe Organizer woop");
+            inventory4.setDB("MongoDB");
+            inventory4.setBackendStructure("Express - Node js");
+            inventory4.setFrontendStructure("React");
+            inventory4.setMainComponents("Server handling API requests, middleware for routing and authentication, server-side logic, and a frontend with components for navigation, data presentation, and interactive user interfaces");
 
             // Saves created Inventory objects into the repository
             inventoryRepository.save(inventory);
             inventoryRepository.save(inventory1);
             inventoryRepository.save(inventory2);
             inventoryRepository.save(inventory3);
+            inventoryRepository.save(inventory4);
         };
     }
 }

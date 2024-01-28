@@ -1,5 +1,7 @@
-package com.programming.fetchservice.event;
 
+//Define package 
+package com.programming.fetchservice.event;
+//Imports
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

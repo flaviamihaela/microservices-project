@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j; 
 import org.springframework.stereotype.Service; 
 
+import org.springframework.dao.DataIntegrityViolationException;
+
 import java.util.List;
 
 // Declare class as Spring Service component
@@ -29,6 +31,10 @@ public class ProjectService {
     // Method to create a project
     public void createProject(ProjectRequest projectRequest) {
 
+        // Check if project with the same name already exists
+        if (projectRepository.findByName(projectRequest.getName()).isPresent()) {
+            throw new DataIntegrityViolationException("Project with name " + projectRequest.getName() + " already exists");
+        }
         // Maps DTO to the Project entity
         Project project = Project.builder()
                 .name(projectRequest.getName())
@@ -38,7 +44,7 @@ public class ProjectService {
         // Saves Project entity to db using ProjectRepository
         projectRepository.save(project);
 
-        log.info("Project {} is saved", project.getId());
+        log.info("Project category {} is saved", project.getId());
     }
 
     // Method to retrieve all projects as list of ProjectResponse DTOs
